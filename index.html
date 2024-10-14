@@ -30,37 +30,34 @@
 </div>
 
 <div class="content">
-  <h2>Background</h2>
+  <h2>Introduction</h2>
   <p>Originating from language processing, AR and MAR (BERT-like) are two representative methods for generating images in discrete latent space. Recent work has proven that the generative capabilities of AR models can rival or even surpass those of diffusion models. However, AR models has long inference time, and they are intrisically not good at image editing tasks due to the fixed order. MAR reduces the number of inference steps at the cost of requiring global calculations, and the random order facilitates editing tasks. SAR unifies AR and MAR by generalizing the sequence order and output intervals. Further, SAR offers a path gradually travelling from AR to MAR, where in the transition states, one can train models possessing good properties of both AR and MAR, including few-step inference, KV cache acceleration, image editing, etc. </p>
   <br>
-  <img class="summary-img" src="./DreamBooth_files/background.png" style="width:100%;"> <br>
+  <img class="summary-img" src="./DreamBooth_files/comparison.png" style="width:100%;"> <br>
 </div>
 
 <div class="content">
   <h2>Approach</h2>
-  <p>Our method takes as input a few images (typically 3-5 images suffice, based on our experiments) of a subject and the corresponding class name, returning a fine-tuned/"personalized" text-to-image model that encodes a unique identifier for the subject. At inference, we can implant this unique identifier in different sentences to synthesize the subject in various contexts.</p>
+  <p>During training, the input sequence is first rearranged to a causal one. And we control the output intervals using generalized causal masks in the proposed Fully Masked Transformer.</p>
   <br>
-  <img class="summary-img" src="./DreamBooth_files/high_level.png" style="width:100%;"> <br>
-  <p>Given ~3-5 images of a subject, we fine-tune a text-to-image diffusion model in two steps: (a) fine-tuning the low-resolution model with the input images paired with a text prompt containing a unique identifier and the class name, while applying a class-specific prior preservation loss; (b) fine-tuning the super-resolution components with pairs of low-resolution and high-resolution images to maintain fidelity to small details of the subject.</p>
-  <br>
-  <img class="summary-img" src="./DreamBooth_files/system.png" style="width:100%;"> <br>
+  <img class="summary-img" src="./DreamBooth_files/model.png" style="width:100%;"> <br>
 </div>
 
 <div class="content">
-  <h2>Results</h2>
-  <p>By fine-tuning a model using our method, we generate various images of a subject in different environments, preserving subject details and ensuring realistic interactions between the scene and the subject.</p>
-  <img class="summary-img" src="./DreamBooth_files/results.png" style="width:100%;">
+  <h2>Few-step Generation</h2>
+  <p>We train a T2I model, Lumina-SAR, in the transition states of SAR. Its first feature is few-step inference. Lumina-SAR begins to produce meaningful images at around 4 to 8 steps. With 64 steps, it can deliver high-quality outputs, requiring a processing time of only less than 3s on one A100. Typically, the full 4096 steps (AR) take >60 times longer than that required for 64 steps.</p>
+  <img class="summary-img" src="./DreamBooth_files/t2i_step.png" style="width:100%;">
 </div>
 
 <div class="content">
-  <h2>Art Rendition</h2>
-  <p>We showcase original artistic renditions of our subjects in the style of famous painters, demonstrating creativity and novel composition.</p>
+  <h2>Zero-shot Painting</h2>
+  <p>Another advantage of SAR is the flexibility in inference order, which facilitates image editing tasks such as image inpainting and outpainting. We perform zero-shot painting with Lumina-SAR, where the mask can be any shape.</p>
   <br>
-  <img class="summary-img" src="./DreamBooth_files/art.png" style="width:100%;"> <br>
+  <img class="summary-img" src="./DreamBooth_files/painting.png" style="width:100%;"> <br>
 </div>
 
 <div class="content">
-  <h2>Text-Guided View Synthesis</h2>
+  <h2>More Visualizations</h2>
   <p>Our technique synthesizes images with specified viewpoints for a subject, highlighting the preservation of unique patterns and realistic background changes.</p>
   <br>
   <img class="summary-img" src="./DreamBooth_files/novel_views.png" style="width:100%;"> <br>
