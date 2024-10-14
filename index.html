@@ -15,7 +15,7 @@
     <span style="font-size: 24px">MMLab, CUHK & Shanghai AI Lab & Nanjing University</span></p>
   <br>
   <img src="./DreamBooth_files/visualization.png" class="teaser-gif" style="width:100%;"><br>
-  <h3 style="text-align:center"><em>SAR provides a smooth path connecting AR and MAR, where the transition states enjoy both their merits. </em></h3>
+  <h3 style="text-align:center"><em>SAR provides a smooth pathway travelling from AR to MAR, where the transition states enjoy both their merits. </em></h3>
   <font size="+2">
           <p style="text-align: center;">
             <a href="https://arxiv.org" target="_blank">[Paper]</a> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -31,7 +31,7 @@
 
 <div class="content">
   <h2>Background</h2>
-  <p>Given a particular subject, it is very challenging to generate it in different contexts with state-of-the-art text-to-image models while maintaining high fidelity to its key visual features. Existing methods often struggle to reconstruct the unique characteristics of a subject across varying contexts.</p>
+  <p>Originating from language processing, AR and MAR (BERT-like) are two representative methods for generating images in discrete latent space. Recent work has proven that the generative capabilities of AR models can rival or even surpass those of diffusion models. However, AR models has long inference time, and they are intrisically not good at image editing tasks due to the fixed order. MAR reduces the number of inference steps at the cost of requiring global calculations, and the random order facilitates editing tasks. SAR unifies AR and MAR by generalizing the sequence order and output intervals. Further, SAR offers a path gradually travelling from AR to MAR, where in the transition states, one can train models possessing good properties of both AR and MAR, including few-step inference, KV cache acceleration, image editing, etc. </p>
   <br>
   <img class="summary-img" src="./DreamBooth_files/background.png" style="width:100%;"> <br>
 </div>
