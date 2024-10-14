@@ -38,9 +38,11 @@
 
 <div class="content">
   <h2>Approach</h2>
-  <p>During training, the input sequence is first rearranged to a causal one. And we control the output intervals using generalized causal masks in the proposed Fully Masked Transformer.</p>
+  <p>In order to train one model under the SAR framework, one should first specify the hyper-parameters, sequence order and output intervals. Based on the order setting, we first rearrange the sequence to the causal version. And we set the target as the rearranged causal sequence. Next, based on the output intervals, we drop the last set of the rearranged sequence and prepend a class token. The resulting sequence is then fed into the proposed Fully Masked Transformer. Then the model can be trained with the common cross entropy loss.</p>
   <br>
   <img class="summary-img" src="./DreamBooth_files/model.png" style="width:100%;"> <br>
+    <br>
+  <img class="summary-img" src="./DreamBooth_files/algorithm.png" style="width:100%;"> <br>
 </div>
 
 <div class="content">
@@ -68,26 +70,6 @@
     </p>
   <br>
   <img class="summary-img" src="./DreamBooth_files/add_t2i.png" style="width:100%;"> <br>
-</div>
-
-<div class="content">
-  <h2>Property Modification</h2>
-  <p>We demonstrate color modifications and combinations between specific subjects and other entities, preserving the unique visual features that define the subject's identity.</p>
-  <br>
-  <img class="summary-img" src="./DreamBooth_files/property_modification.png" style="width:100%;"> <br>
-</div>
-
-<div class="content">
-  <h2>Accessorization</h2>
-  <p>We showcase the ability to outfit subjects with various accessories, ensuring the preservation of identity while allowing for diverse styling options.</p>
-  <br>
-  <img class="summary-img" src="./DreamBooth_files/accessories.png" style="width:100%;"> <br>
-</div>
-
-<div class="content">
-  <h2>Societal Impact</h2>
-  <p>This project aims to provide users with an effective tool for synthesizing personal subjects in different contexts. While general text-to-image models might be biased towards specific attributes, our approach enables better reconstructions of desirable subjects. However, there are concerns regarding misuse that must be addressed in future research.</p>
-  <br>
 </div>
 
 <div class="content">
