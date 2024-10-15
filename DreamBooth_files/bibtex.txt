@@ -1,6 +1,6 @@
 @article{liu2024costomize,
   title={Customize Your Visual Autoregressive Recipe with Set Autoregressive Modeling},
   author={Liu, Wenze and Zhuo, Le and Xin, Yi and Xia, Sheng and Gao, Peng and Yue, Xiangyu},
-  booktitle={arXiv preprint arxiv:},
+  booktitle={arXiv preprint arxiv:2410.10511},
   year={2024}
 }
