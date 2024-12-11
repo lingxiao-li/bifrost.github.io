@@ -1,6 +1,6 @@
-@article{liu2024costomize,
-  title={Customize Your Visual Autoregressive Recipe with Set Autoregressive Modeling},
-  author={Liu, Wenze and Zhuo, Le and Xin, Yi and Xia, Sheng and Gao, Peng and Yue, Xiangyu},
-  booktitle={arXiv preprint arxiv:2410.10511},
+@INPROCEEDINGS{Li24,
+  title = {BIFRÖST: 3D-Aware Image compositing with Language Instructions},
+  author = {Lingxiao Li and Kaixiong Gong and Weihong Li and Xili Dai and Tao Chen and Xiaojun Yuan and Xiangyu Yue},
+  booktitle={Advanced Neural Information Processing System (NeurIPS)},
   year={2024}
 }
